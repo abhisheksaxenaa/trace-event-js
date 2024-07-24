@@ -1,0 +1,30 @@
+{
+  "name": "trace-event",
+  "version": "1.0.0",
+  "description": "Tracing mouse and keyboard events",
+  "type": "module",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf dist && microbundle --tsconfig tsconfig.json --no-sourcemap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/abhisheksaxenaa/trace-event-js.git"
+  },
+  "keywords": [
+    "track",
+    "mouse"
+  ],
+  "author": "Abhishek Saxena",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhisheksaxenaa/trace-event-js/issues"
+  },
+  "homepage": "https://github.com/abhisheksaxenaa/trace-event-js#readme",
+  "devDependencies": {
+    "microbundle": "^0.15.1",
+    "typescript": "^5.5.4"
+  }
+}
