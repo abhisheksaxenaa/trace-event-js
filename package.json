@@ -2,7 +2,7 @@
   "name": "trace-event",
   "version": "1.0.0",
   "description": "Tracing mouse and keyboard events",
-  "type": "module",
+  "type": "commonjs",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "scripts": {

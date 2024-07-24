@@ -1,11 +1,16 @@
-interface TraceEventIntializerI {
-    apiKey: string;
-}
-function initialize(params: TraceEventIntializerI): void {
-    const { apiKey } = params;
-    console.log(apiKey);
+import Capture from "./captures/capture";
+
+class TraceEvent {
+    private apiKey: string;
+    private captureObj: Capture;
+    constructor(apiKey: string) {
+        console.log("Initializing API KEY : ", apiKey)
+        this.apiKey = apiKey;
+        this.captureObj = new Capture();
+    }
+    initialize() {
+        this.captureObj.initialize();
+    }
 }
 
-export {
-    initialize
-};
+export { TraceEvent };
