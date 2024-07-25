@@ -1,0 +1,61 @@
+import { BaseEvent } from "./BaseEvent";
+interface TraceEventElement {
+    id?: string;
+    disabled: string;
+    tagName: string;
+}
+declare class MouseEventModel implements BaseEvent {
+    private isTrusted;
+    private altKey;
+    private button;
+    private buttons;
+    private clientX;
+    private clientY;
+    private ctrlKey;
+    private detail;
+    private element;
+    private layerX;
+    private layerY;
+    private metaKey;
+    private movementX;
+    private movementY;
+    private offsetX;
+    private offsetY;
+    private pageX;
+    private pageY;
+    private pointerType;
+    private screenX;
+    private screenY;
+    private shiftKey;
+    private x;
+    private y;
+    timestamp: number;
+    constructor(ev: PointerEvent);
+    getData(): {
+        isTrusted: boolean;
+        altKey: boolean;
+        button: number;
+        buttons: number;
+        clientX: number;
+        clientY: number;
+        ctrlKey: boolean;
+        detail: number;
+        element: TraceEventElement;
+        layerX: number;
+        layerY: number;
+        metaKey: boolean;
+        movementX: number;
+        movementY: number;
+        offsetX: number;
+        offsetY: number;
+        pageX: number;
+        pageY: number;
+        pointerType: string;
+        screenX: number;
+        screenY: number;
+        shiftKey: boolean;
+        x: number;
+        y: number;
+    };
+}
+export default MouseEventModel;
