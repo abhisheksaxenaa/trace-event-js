@@ -21,6 +21,7 @@ class MouseEventModel implements BaseEvent {
     private screenX : number;
     private screenY : number;
     private shiftKey : boolean;
+    private target: string;
     private x : number;
     private y : number;
     timestamp: number;
@@ -32,6 +33,7 @@ class MouseEventModel implements BaseEvent {
         this.clientX = ev.clientX;
         this.clientY = ev.clientY;
         this.ctrlKey = ev.ctrlKey;
+        this.target = JSON.stringify(ev.target);
         this.layerX = ev.layerX;
         this.layerY = ev.layerY;
         this.metaKey = ev.metaKey;
@@ -71,6 +73,7 @@ class MouseEventModel implements BaseEvent {
             screenX: this.screenX,
             screenY: this.screenY,
             shiftKey: this.shiftKey,
+            target: this.target,
             x: this.x,
             y: this.y
         }
