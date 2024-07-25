@@ -1,5 +1,9 @@
 import { BaseEvent } from "./BaseEvent";
-
+interface TraceEventElement {
+    id?: string;
+    disabled: string;
+    tagName: string;
+}
 class MouseEventModel implements BaseEvent {
     private isTrusted: boolean;
     private altKey : boolean;
@@ -8,6 +12,8 @@ class MouseEventModel implements BaseEvent {
     private clientX : number;
     private clientY : number;
     private ctrlKey : boolean;
+    private detail: number;
+    private element: TraceEventElement;
     private layerX : number;
     private layerY : number;
     private metaKey : boolean;
@@ -21,7 +27,6 @@ class MouseEventModel implements BaseEvent {
     private screenX : number;
     private screenY : number;
     private shiftKey : boolean;
-    private target: string;
     private x : number;
     private y : number;
     timestamp: number;
@@ -33,7 +38,15 @@ class MouseEventModel implements BaseEvent {
         this.clientX = ev.clientX;
         this.clientY = ev.clientY;
         this.ctrlKey = ev.ctrlKey;
-        this.target = JSON.stringify(ev.target);
+        this.detail = ev.detail;
+        this.element = {
+            // @ts-ignore
+            tagName: ev.target?.tagName,
+            // @ts-ignore
+            id: ev.target?.id,
+            // @ts-ignore
+            disabled: ev.target?.disabled,
+        };
         this.layerX = ev.layerX;
         this.layerY = ev.layerY;
         this.metaKey = ev.metaKey;
@@ -60,6 +73,8 @@ class MouseEventModel implements BaseEvent {
             clientX: this.clientX,
             clientY: this.clientY,
             ctrlKey: this.ctrlKey,
+            detail: this.detail,
+            element: this.element,
             layerX: this.layerX,
             layerY: this.layerY,
             metaKey: this.metaKey,
@@ -73,7 +88,6 @@ class MouseEventModel implements BaseEvent {
             screenX: this.screenX,
             screenY: this.screenY,
             shiftKey: this.shiftKey,
-            target: this.target,
             x: this.x,
             y: this.y
         }
