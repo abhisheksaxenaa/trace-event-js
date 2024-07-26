@@ -88,6 +88,7 @@ class MouseEventModel implements BaseEvent {
             screenX: this.screenX,
             screenY: this.screenY,
             shiftKey: this.shiftKey,
+            timestamp: this.timestamp,
             x: this.x,
             y: this.y
         }

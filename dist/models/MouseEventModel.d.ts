@@ -54,6 +54,7 @@ declare class MouseEventModel implements BaseEvent {
         screenX: number;
         screenY: number;
         shiftKey: boolean;
+        timestamp: number;
         x: number;
         y: number;
     };
